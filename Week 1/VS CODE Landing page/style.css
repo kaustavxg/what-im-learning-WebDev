@@ -66,11 +66,13 @@ body {
 
 .search-container input{
     background-color: transparent;
-    color: #9ba3b4;
-    padding: 5px 12px 5px 20px;
+    color: #e9edf4;
+    padding: 5px 12px 5px 10px;
+    font-size: 0.8rem;
     height: unset;
     border-radius: 4px;
     border-radius: 1px solid rgba(255, 255, 255, 0.15);
+    
 }
 
 /* .icon{
@@ -91,3 +93,109 @@ body {
     font-weight: 600;
     color: white;
 }
+
+.content {
+    max-width: 1280px;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    padding: 0.6rem;
+    align-items: center;
+    margin: 0 auto;
+    /* background-color: green; */
+}
+
+.main-info {
+    padding-top: 1rem;
+    color: #9ba3b4;
+    font-size: 0.9rem;
+}
+
+.version {
+    color: #2996e9;
+    text-decoration: underline;
+    text-align: left;
+}
+
+/* Adjusted to display in a row */
+.main-content {
+    display: flex;
+    flex-direction: row; /* Set content-left and content-right in a row */
+    justify-content: space-between; /* Space out left and right content */
+    gap: 2rem; /* Add space between content-left and content-right */
+}
+
+.content-left {
+    /* max-width: 40%; */
+    display: flex;
+    flex-direction: column; /* Keep items in a column inside content-left */
+    text-align: left;
+    justify-content: center; /* Align content to the top */
+    align-items: flex-start; /* Align items to the left */
+    gap: 1.5rem;
+}
+
+.section-para {
+    color: #9ba3b4;
+    background-color: rgb(33, 31, 31);
+    max-width: 100%; /* Make it occupy the full width */
+    padding: 0.3rem 0.6rem;
+    border-radius: 1rem;
+    text-align: left;
+}
+
+.content-heading {
+    font-size: 3.5rem;
+    color: white;
+    text-align: left; /* Ensure text is left-aligned */
+}
+
+.content-download-btn {
+    padding: 0.8rem 1rem;
+    border-radius: 0.3rem;
+    background-color: #0078d4;
+    font-size: 1rem;
+    font-weight: 600;
+    color: white;
+    text-align: left; /* Ensure text inside button is aligned left */
+}
+
+.para1{
+    color: #9ba3b4;
+    margin: 0;
+    padding: 0;
+    font-size: 0.9rem;
+}
+
+.para1-links{
+    color: #2996e9;
+    text-decoration: underline;
+}
+
+.para2{
+    color: #9ba3b4;
+    font-size: 0.7rem;
+}
+
+.para2-links{
+    color: #2996e9;
+    text-decoration: underline;
+}
+
+.content-right {
+    /* max-width: 60%; */
+    display: flex;
+    flex-direction: column; /* Keep the content-right elements in a column */
+    justify-content: center;
+    align-items: center;
+    margin-top: 1rem;
+}
+
+.vscode-img {
+    height: 500px;
+    width: 800px;
+    border-radius: 15px; /* This will round the corners */
+    border: 1px solid rgb(52, 49, 49); /* This adds the border around the image */
+}
+
+
