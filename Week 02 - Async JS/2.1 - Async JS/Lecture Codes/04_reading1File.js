@@ -2,10 +2,10 @@
 // such as reading, writing, and managing files and directories.
 const fs = require("fs");
 
-// 'fs.readFileSync' is a method that reads the contents of a file synchronously,
+// 'fs.readFileSync' is a method that reads the contents of a file "synchronously",
 // The first argument is the file path ('a.txt'), and the second argument specifies the encoding ('utf-8'),
 // which ensures the file is read as a text string instead of raw binary data.
-const contents = fs.readFileSync("a.txt", "utf-8");
+const contents = fs.readFileSync("D:/Coding/Web Development/100xDevs Cohort 3.0 WebDev+DevOps/a.txt", "utf-8");
 
 console.log(contents);
 
@@ -14,4 +14,13 @@ console.log(contents);
 // utf is an encoding type
 
 
- 
+//  var user = {
+
+//     age: 21,
+//     name: "harkirat",
+//     calculateAge() {
+//         return 10
+//     }
+//  }
+
+//  console.log(user.calculateAge());
