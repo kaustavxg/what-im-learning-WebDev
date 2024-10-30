@@ -3,6 +3,10 @@
 
 const fs = require("fs");
 
+// function print(err, data) {
+//   console.log(data)
+// }
+
 fs.readFile("a.txt", "utf-8", function (err, contents) {
   console.log(contents);
 });
@@ -14,3 +18,6 @@ fs.readFile("b.txt", "utf-8", function (err, contents) {
 fs.readFile("a.txt", "utf-8", function (err, contents) {
   console.log(contents);
 });
+
+
+ 
