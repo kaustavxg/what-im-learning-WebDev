@@ -1,4 +1,6 @@
-# Promises for beginners in JavaScript
+# Week 02 - 2.2 | Promises Java Script
+
+## Promises for beginners in JavaScript
 
 Promises in JavaScript help us handle things that take time to complete, like loading data from a server or doing complex calculations. When you request something that takes time, JavaScript doesn’t want to keep you waiting; instead, it gives you a “promise” that it’ll let you know when the job is done. Think of a promise as a placeholder for a future result.
 
@@ -48,3 +50,18 @@ getData
   .catch((error) => {
     console.error(error); // Runs if the promise is rejected
   });
+
+## Explanation of the above Example
+
+In this example:
+
+- We created a promise that simulates loading data.
+- If `success` is `true`, the promise will be **fulfilled** after 2 seconds with the message `"Data loaded successfully!"`.
+- If `success` is `false`, the promise will be **rejected** with the error `"Failed to load data."`
+- We used `.then()` to handle the success and `.catch()` to handle any error.
+
+## Summary
+
+- Promises let you handle tasks that take time without stopping other code from running.
+- `.then()` and `.catch()` make it easy to manage what happens when the task finishes successfully or fails.
+
