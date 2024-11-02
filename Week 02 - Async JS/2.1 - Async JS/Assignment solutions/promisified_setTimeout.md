@@ -13,7 +13,7 @@ Here's the code for a promisified `setTimeout`:
 function delay(ms) {
   return new Promise((resolve) => setTimeout(resolve, ms));
 }
-
+``
 ## Breaking Down the Code
 
 ### Function Declaration
