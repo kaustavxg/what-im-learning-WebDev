@@ -13,3 +13,4 @@ function callback() {
     console.log("promise succeded");
 }
 p.then(callback); // this will be called when the promise is resolved
+
