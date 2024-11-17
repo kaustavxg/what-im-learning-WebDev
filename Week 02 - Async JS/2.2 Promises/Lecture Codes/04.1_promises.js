@@ -1,11 +1,10 @@
-// for more understand check out [04.2_promises]
+// for more understand check out [04.2_promises - image]
 
 function random(resolve) {
     setTimeout(resolve, 4000);
 }
 
-let p = new Promise(random); // supposed to return uou something eventually on completion
-
+let p = new Promise(random); // supposed to return you something eventually on completion
 
 
 //using the eventual value returned by the promise
