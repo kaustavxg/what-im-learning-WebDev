@@ -21,3 +21,15 @@ function sum2(n2) {
 
 const ans2 = sum2(2); // Test case: sum of numbers from 1 to 2
 console.log(ans2);  // Expected output: 3
+
+// 1 => n
+function sum(n) {
+	let ans = 0;
+	for (let i = 1; i <= n; i++) {
+		ans = ans + i;
+	}
+	return ans;
+}
+
+const ans3 = sum(100);
+console.log(ans3);
