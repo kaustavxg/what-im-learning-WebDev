@@ -7,5 +7,5 @@ let arr = ["harkirat", 21, {
     }]
 }];
 
-console.log(arr[2])
-console.log(arr[2].cities[3].city)
+console.log(arr[2]);
+console.log(arr[2].cities[3].city);

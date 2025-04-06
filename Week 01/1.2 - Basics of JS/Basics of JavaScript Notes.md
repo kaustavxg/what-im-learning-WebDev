@@ -7,5 +7,5 @@
  # The filter method doesn't modify the original array, but instead creates and returns a new array containing only the elements that meet the specified condition.
  
 
-![What are filters](what%20are%20filters.png)
+![What are filters]("Lecture Codes/what are filters.png")
 
