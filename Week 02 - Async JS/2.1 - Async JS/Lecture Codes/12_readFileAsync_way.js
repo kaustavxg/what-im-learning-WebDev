@@ -1,25 +1,25 @@
-// import the fs module
+// ****************  RUN IN REPLIT  ******************
+
+
 const fs = require("fs");
 
-// read the file a.txt synchronously and print the content
-// let contents = fs.readFileSync("a.txt", "utf8"); // synchronous
-// console.log(contents);
-
-// function to read the file asynchronously
+// Ye ek callback function hai jiska kaam hai error ya data ko handle karna
+// Jab file read hoti hai, agar error aaya toh 'err' mein milega, warna 'data' mein content aayega
 function print(err, data) {
-    console.log(data);
+  if (err) {
+    console.log("File not found!"); // agar koi error aaya toh usse print karo
+  } else {
+    console.log(data); // agar sab sahi hai toh file ka data print karo
+  }
 }
 
-// read the file a.txt asynchronously and print the content
-// file path, encoding, callback function
-fs.readFile("a.txt", "utf8", print); // asynchronous
+// Asynchronous (non-blocking) tareeke se 'a.txt' file ko read kar rahe hain
+// readFile khud se 'print' function ko call karega jab file ka kaam ho jaayega
+const contents = fs.readFile("a.txt", "utf-8", print);
 
-// read the file b.txt asynchronously and print the content
-fs.readFile("b.txt", "utf8", print); // asynchronous
+// Ye bhi wahi async read hai for 'b.txt'
+// Iska output bhi baad mein aayega, jab file read complete hogi
+const contents2 = fs.readFile("b.txt", "utf-8", print);
 
+// Ye line turant print ho jaayegi, bina wait kiye upar waali files ke liye
 console.log("Done!");
-
-
-// fs.readFile("a.txt", "utf-8", function (err, contents) {
-//     console.log(contents);
-// });

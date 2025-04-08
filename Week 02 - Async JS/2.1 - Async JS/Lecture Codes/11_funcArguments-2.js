@@ -1,3 +1,5 @@
+// Passing a function as an argument to another function
+
 function sum(a, b) {
     return a + b;
   }
@@ -14,7 +16,7 @@ function sum(a, b) {
     return a / b;
   }
   
-  function doOperation(a, b, op) {
+  function doOperation(a, b, op) { // op -> functional argument
     // a = 1
     // b = 2
     // op = divide
