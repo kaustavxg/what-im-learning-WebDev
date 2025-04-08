@@ -1,26 +1,27 @@
-// function run() {
-// 	console.log("I will run after 1s");
-// }
+// RUN ON LOUPE
 
-// setTimeout(run, 1000);
-// // setTimeout is a global function which is available to everyone
+function run() {
+	console.log("I will run after 1s");
+}
 
-// console.log("I will run immedietely");
+setTimeout(run, 1000); // i/o intensive task
 
-// console.log("Hi!")
+console.log("I will run immedietely");
+
+console.log("Hi!")
 
 function timeout() {
 	console.log("click the button")
 }
 
-setTimeout(timeout, 10000);
+setTimeout(timeout, 10000); 
 
 console.log("welcome here")
 
-// 4-5f seconds
-let c = 0;
-for(let i = 0; i < 10000000000; i++) {
-	c+=1;
-}
+// // 4-5 seconds -> CPU INTENSIVE TASK
+// let c = 0;
+// for(let i = 0; i < 10000000000; i++) {
+// 	c+=1;
+// }
 
-console.log("expensive operation done")
+// console.log("expensive operation done")
