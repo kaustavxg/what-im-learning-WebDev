@@ -1,6 +1,8 @@
 // ****************  RUN IN REPLIT  ******************
 
 
+// ASYNC -> I/O Bound
+
 const fs = require("fs");
 
 // Ye ek callback function hai jiska kaam hai error ya data ko handle karna
