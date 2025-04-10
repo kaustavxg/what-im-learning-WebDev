@@ -6,7 +6,7 @@
 const fs = require("fs");
 
 // Ye ek callback function hai jiska kaam hai error ya data ko handle karna
-// Jab file read hoti hai, agar error aaya toh 'err' mein milega, warna 'data' mein content aayega
+// Jab file read hoti hai, agar error aaya toh 'err' mein milega that is file does not exist in the system, warna 'data' mein content aayega
 function print(err, data) {
   if (err) {
     console.log("File not found!"); // agar koi error aaya toh usse print karo
