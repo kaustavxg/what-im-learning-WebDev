@@ -1,21 +1,29 @@
-// const rect = {
-//     width: 2,
-//     height: 3,
-//     color: " red"
-// }
+// you don't need the concept of classes precisely
+// you can do it with creating objects
 
-// function area(rect) {
-//     return rect.height * rect.width + rect.color;
-//     // return rect.color;
-// }
+const rect1 = {
+    width: 2,
+    height: 3,
+    color: " red"
+}
 
-// const ans = area(rect);
-// console.log(ans)
+function area1(rect1) {
+    return "area is: " +rect1.height * rect1.width + " , color is:" + rect1.color;
+    // return rect.color;
+}
+
+const ans1 = area1(rect1);
+console.log(ans1)
+
+console.log("code 1 ends here");
+// OR
+console.log("code 2 starts here");
 
 
+// class -> clean syntax
 class Rectangle {
-    constructor(width, height, color) {
-         this.width = width; // properties
+    constructor(width, height, color) { 
+         this.width = width; // "this" variable gives access to current object inside variable
          this.height = height; // properties
          this.color = color; // properties
          
@@ -33,11 +41,16 @@ class Rectangle {
     }
     
  }
- 
- const rect = new Rectangle(2, 4, "red")
+
+ const rect = new Rectangle(2, 4, "red") // creating instance or object of a rectangle class
  console.log(rect.width); // 2
  console.log(rect.height); // 4
 
- const area = rect.area();
+ console.log(rect.width * rect.height); // 8
+ const area = rect.area(); // line 46 and 47 is same
  console.log(area) // 8
+
+
+ 
+
 
