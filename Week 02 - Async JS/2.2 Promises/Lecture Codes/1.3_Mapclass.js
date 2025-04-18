@@ -10,9 +10,11 @@ console.log(firstAge);
 
 
 
-const map2 = new Map();
-map2.set('hobby', 'cricket');
-map2.set('cooking', 'chole bhature');
+// const map2 = new Map();
+// map2.set('hobby', 'cricket');
+// map2.set('cooking', 'chole bhature');
 
-const Newhobby = map2.get('hobby');
-console.log(Newhobby);
+// const Newhobby = map2.get('hobby');
+// console.log(Newhobby);
+
+
