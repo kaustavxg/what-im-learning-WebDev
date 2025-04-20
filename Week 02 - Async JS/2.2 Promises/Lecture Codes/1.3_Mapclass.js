@@ -1,12 +1,12 @@
-const map = new Map();
-map.set('name', 'Kaustav');
-map.set('age', 20);
+// const map = new Map();
+// map.set('name', 'Kaustav');
+// map.set('age', 20);
 
-const firstName = map.get('name');
-console.log(firstName);
+// const firstName = map.get('name');
+// console.log(firstName);
 
-const firstAge = map.get('age')
-console.log(firstAge);
+// const firstAge = map.get('age')
+// console.log(firstAge);
 
 
 
@@ -18,3 +18,7 @@ console.log(firstAge);
 // console.log(Newhobby);
 
 
+const map = new Map(); 
+map.set('name', 'mohini gupta');
+map.set('age', 21);
+console.log(map.get('name'));
