@@ -16,10 +16,11 @@
 
 
 function waitFor3S(resolve) {
+    console.log(resolve);
     setTimeout(resolve, 3000)
 }
 
-console.log("after 3 seconds, calls resolve ")
+// console.log("after 3 seconds, calls resolve ")
 
 function main() {
     console.log("main is called after 3 seconds")
