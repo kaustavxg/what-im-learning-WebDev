@@ -39,7 +39,6 @@ class Rectangle {
             //  console.log(`Painting with color ${this.color}`);
             console.log("color is " + this.color);
     }
-    
  }
 
  const rect = new Rectangle(2, 4, "red") // creating instance or object of a rectangle class
