@@ -1,14 +1,14 @@
  // 1. Write a function that takes a user as an input and greets them with their name and age
 
- function greet(user3){
-    console.log("Hi " + user3.name + " your age is " + user3.age + " and your college is " + user3.college)
+ function greet(user){
+    console.log("Hi " + user.name + " your age is " + user.age + " and your college is " + user.college)
   }
   
-  let user3 = {
+  let user = {
     name: "kaustav,",
     age: 20,
     College: "SGTBKC",
   }
   
-  greet(user3);
+  greet(user);
 

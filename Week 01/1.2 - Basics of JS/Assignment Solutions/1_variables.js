@@ -8,3 +8,10 @@ var isStudent = true;
 console.log(age);
 console.log(isStudent);
 console.log(Firstname);
+
+
+var x = "mangal";
+console.log(x);
+
+var x = "mohini";
+console.log(x);
