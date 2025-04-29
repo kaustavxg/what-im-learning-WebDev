@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Todo List</title>
+  <link rel="stylesheet" href="1_delete.css">
+</head>
+
+<body>
+
+  <h1>Todo List</h1>
+
+  <div id="todoParent">
+
+    <div id="todo-1" class="todo-item">
+      <h4>1. Take class</h4>
+      <button onclick="deleteTodo(1)" class="delete-button">Delete</button>
+    </div>
+
+    <div id="todo-2" class="todo-item">
+      <h4>2. Go out to eat</h4>
+      <button onclick="deleteTodo(2)" class="delete-button">Delete</button>
+    </div>
+
+  </div>
+
+  <div class="add-todo">
+    <input type="text" placeholder="Add a new todo" id="new-todo">
+    <button id="add-button">Add Todo</button>
+  </div>
+
+  <script>
+    function deleteTodo(index) {
+      const element = document.getElementById("todo-" + index);
+      document.getElementById("todoParent").removeChild(element);
+    }
+  </script>
+
+</body>
+
+</html>
