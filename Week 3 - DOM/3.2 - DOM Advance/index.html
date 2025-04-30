@@ -1,0 +1,29 @@
+<html>
+    <head>
+        <title>DOM advance</title>
+    </head>
+
+    <body>
+        <input type="text" placeholder="enter your todo">
+        <button onclick="addTodo()">Delete</button>
+    </body>
+
+
+    <script>
+        function addTodo() {
+            const value = document.querySelector("input").value;
+            const spanEl = document.createElement("span");
+            const buttonEl = document.createElement("button");
+            spanEl.innerHTML = value;
+            buttonEl.innerHTML = "Delete";
+            ///
+
+            const divEl = document.createElement("div");
+            divEl.appendChild(spanEl);
+            divEl.appendChild(buttonEl);
+
+
+            document.querySelector("body").appendChild(divEl);
+        }
+    </script>
+</html>
