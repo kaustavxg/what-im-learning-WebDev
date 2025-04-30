@@ -1,0 +1,19 @@
+*{
+    background-color: lightgoldenrodyellow;
+}
+
+#add-todo{
+    background-color: green;
+    color: white;
+    border-radius: 20%;
+}
+
+button:hover{
+    background-color: lightcoral;
+}
+
+#todo-input{
+    color: white;
+    background-color: black;
+}
+

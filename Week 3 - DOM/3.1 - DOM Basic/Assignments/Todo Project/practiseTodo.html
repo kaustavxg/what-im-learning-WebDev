@@ -1,0 +1,40 @@
+<html>
+    <head>
+        <title>Practise Todo</title>
+        <link rel="stylesheet" href="practiseTodo.css">
+    </head>
+
+    <body id="body">
+        <input type="text" placeholder="Enter your Todo" id="todo-input">
+        <button onclick="addTodo()" id="add-todo">Add Todo!</button>
+    </body>
+
+    <script>
+        let ctr = 1;
+        function deleteTodo(index) {
+            const element = document.getElementById(index);
+            element.parentNode.removeChild(element);
+        }
+
+
+        function addTodo() {
+            const inputEle = document.querySelector("input");
+            const ExtractedValue = inputEle.value;
+
+            const newDivEl = document.createElement("div");
+            newDivEl.setAttribute("id", ctr);
+            
+            newDivEl.innerHTML = "<div>" + ExtractedValue + "</div> <button onclick = 'deleteTodo(" + ctr + ")'> Delete </button>"
+
+            document.querySelector("body").appendChild(newDivEl);
+            ctr = ctr + 1;
+
+        }
+
+       
+
+
+    </script>
+
+
+</html>
