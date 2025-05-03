@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM inside a DOM</title>
+</head>
+<body id="body">
+    <button onclick = "createDom()">Add</button>    
+</body>
+<script>
+    function createDom() {
+        const h1 = document.createElement("h1")
+         h1.innerHTML = "random text"
+
+        const div = document.createElement("div")
+        div.appendChild(h1)
+
+        document.querySelector("body").appendChild(div)
+
+    }
+</script>
+</html>
