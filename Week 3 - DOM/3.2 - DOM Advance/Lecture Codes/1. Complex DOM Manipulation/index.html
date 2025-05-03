@@ -5,19 +5,24 @@
 
     <body>
         <input type="text" placeholder="enter your todo">
-        <button onclick="addTodo()">Delete</button>
+        <button onclick="addTodo()">Add todo!</button>
     </body>
 
 
     <script>
         function addTodo() {
+            // getting the value of the input element and creating span and button elements
             const value = document.querySelector("input").value;
+
+            // creating a span element to hold the todo value and a button element to delete it
             const spanEl = document.createElement("span");
             const buttonEl = document.createElement("button");
+
+            // setting the innerHTML of the span and button elements
             spanEl.innerHTML = value;
             buttonEl.innerHTML = "Delete";
-            ///
 
+            // creating a div element to hold the span and button elements
             const divEl = document.createElement("div");
             divEl.appendChild(spanEl);
             divEl.appendChild(buttonEl);
