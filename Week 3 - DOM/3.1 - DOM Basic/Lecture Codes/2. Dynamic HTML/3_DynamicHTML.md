@@ -1,3 +1,3 @@
 # Dynamic HTML
-##### How can you update the elemtns of the page dynamically?
+##### How can you update the elements of the page dynamically?
 

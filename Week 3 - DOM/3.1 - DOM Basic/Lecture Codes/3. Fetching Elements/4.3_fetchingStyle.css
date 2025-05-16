@@ -1,5 +1,5 @@
 *{
-    background-color: lightcoral;
+    background-color: black;
 }
 
 /* #todo1{
@@ -8,4 +8,17 @@
 
 .todo{
     background-color: yellow;
+}
+
+#btn{
+    background-color: yellow;
+}
+
+input::placeholder{
+    background-color: yellow;
+    color: black;
+}
+
+#inp{
+    color: yellow;
 }
