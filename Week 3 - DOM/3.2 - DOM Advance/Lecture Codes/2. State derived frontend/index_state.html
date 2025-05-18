@@ -50,7 +50,7 @@
 
     // react 
     function render() {
-        document.querySelector("#todos").innerHTML = ""; // it clears the div -> nothing appears on the div
+       document.querySelector("#todos").innerHTML = ""; // it clears the div -> nothing appears on the div
         for(let i = 0; i < todos.length; i++) { // iterates over your todos
             const todo = todos[i];
             const element = createTodoComponent(todos[i]);
