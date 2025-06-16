@@ -1,14 +1,42 @@
+// const fs = require("fs");
+
+// const contents = fs.readFile("a.txt", "utf-8"); // asynchronously
+// const contents4 = fs.readFileSync("a.txt", "utf-8"); // synchronously
+// console.log(contents);
+
+// const contents2 = fs.readFileSync("b.txt", "utf-8"); //synchronously
+// console.log(contents2);
+
+
+// const fs = require("fs")
+
+// const contents3 = fs.readFileSync("c.txt", "utf-8");
+// console.log(contents3) 
+
 const fs = require("fs");
 
-const contents = fs.readFile("a.txt", "utf-8"); // asynchronously
-const contents4 = fs.readFileSync("a.txt", "utf-8"); // synchronously
+// ========= I/O BOUND TASK =========
+const contents = fs.readFileSync("a.txt", "utf-8"); // synchronously
 console.log(contents);
 
-const contents2 = fs.readFileSync("b.txt", "utf-8"); //synchronously
+const contents2 = fs.readFileSync("b.txt", "utf-8"); // synchronously
 console.log(contents2);
 
+console.log();
 
-const fs = require("fs")
+//  ============== Asynchronously =================
 
-const contents3 = fs.readFileSync("c.txt", "utf-8");
-console.log(contents3) 
+const async = fs.readFile("a.txt", "utf-8");
+const async2 = fs.readFile("b.txt", "utf-8");
+console.log(async);
+
+
+// =========== NON I/O BOUND TASK or CPU BOUND TASK ================
+let ans = 0;
+for (let i = 1; i <= 1000000; i++) {
+	ans = ans + i
+}
+console.log(ans);	
+
+// A PROGRAM THAT DEALS WITH DIGITS or CALCULATIONS -> CPU BOUND 
+

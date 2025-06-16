@@ -23,3 +23,4 @@ console.log(ans) // 1+2 = 3
 console.log(ans2) // 1-2 = -1
 console.log(ans3) // 1*2 = 2
 console.log(ans4) // 1/2 = 0.5
+

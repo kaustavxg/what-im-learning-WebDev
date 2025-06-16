@@ -1,4 +1,6 @@
-// Passing a function as an argument to another function
+// // Passing a function as an argument to another function
+
+// const { log } = require("node:console");
 
 function sum(a, b) {
     return a + b;
@@ -33,3 +35,28 @@ console.log(ans) // 1+2 = 3
 console.log(ans2) // 1-2 = -1
 console.log(ans3) // 5/2 = 2.5
 console.log(ans4) // 5*2 = 10
+
+
+// function multiply(a, b){
+//   return a*b;
+// }
+
+// function add(a, b){
+//   return a+b;
+// }
+
+// function subtract(a, b){
+//   return a-b;
+// }
+
+// function divide(a, b){
+//   return a/b;
+// }
+
+// function doOperation(a, b, op){
+//   let value = op(a, b);
+//   return value;
+// }
+
+// const ans = doOperation(1, 2, add);
+// console.log(ans);
