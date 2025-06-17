@@ -39,10 +39,28 @@ const content = fs.readFile("a.txt", "utf-8", print); //asynchronously
 console.log(content);
 
 const content2 = fs.readFile("b.txt", "utf-8", print); //asynchronously
-console.log(content);
+console.log(content2);
 
-setTimeout(function(){
-  console.log("Hi from setTimeout");
-}, 0)
+
 
 console.log("Done");
+
+
+/*
+
+const fs = require("fs")
+
+function print(err, data) {
+    if(err) {
+        console.log("File not found")
+    }
+    else{
+        console.log(data)
+    }
+}
+
+fs.readFile("a.txt", "utf-8", print) //asynchronously
+
+console.log("Done!")
+
+*/
