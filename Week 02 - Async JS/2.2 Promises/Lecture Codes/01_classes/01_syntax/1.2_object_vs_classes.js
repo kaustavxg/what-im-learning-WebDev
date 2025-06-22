@@ -25,7 +25,9 @@ console.log("Method 2 starts here");
 
 class Rectangle {
     // constructor - runs when new object is created
-    // in JavaScript you can have only 1 constructoor
+    // in JavaScript you can have only *****1 Constructor****
+
+
     constructor(width, height, color) { 
         this.width = width;   // "this" gives access to current object
         this.height = height; // properties
@@ -80,38 +82,3 @@ rect.paint(); // Output: color is red
 
 
 */
-
-
-
-
-
-
-
-
-
-
-/*
-
-// class rectangle{
-//     constructor(width, height, color){
-//         this.width = width;
-//         this.height = height;
-//         this.color = color;
-//     }
-
-//     area(){
-//         const area = this.height * this.width;
-//         return area;
-//     }
-
-//     paint(){
-//         console.log(Painting with color: ${this.color});
-//     }
-// }
-
-// const rect = new rectangle(2, 4, 'red');
-// console.log(rect.area());
-// console.log((rect.color));
-
-*/
-

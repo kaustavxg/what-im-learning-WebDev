@@ -17,15 +17,13 @@ class Rectangle {
         console.log("- Color:", this.color);
     }
     
-    // INSTANCE METHOD: Function that belongs to each rectangle object
     area() {
         // 'this' refers to the current rectangle object calling this method
         // this.height and this.width access the properties we stored in constructor
         const area = this.height * this.width;
-        return area; // Returns the calculated area value
+        return area;
     }
     
-    // ANOTHER INSTANCE METHOD: Each rectangle can paint itself
     paint() {
         // Template literal using this.color property
         console.log(`Painting with color: ${this.color}`);
@@ -50,18 +48,13 @@ console.log("\n--- METHOD CALLS ---");
 
 // CALLING AREA METHOD:
 // rect.area() means: "call the area method on the rect object"
-// Inside area method, 'this' refers to rect object
-// So this.height = rect.height = 4, this.width = rect.width = 2
+
 console.log("Area calculation:", rect.area()); // Output: 8
 
-// ACCESSING PROPERTY DIRECTLY:
-// rect.color directly accesses the color property stored in the object
 console.log("Rectangle color:", rect.color); // Output: red
 
-// CALLING PAINT METHOD:
-// rect.paint() calls paint method on rect object
-// Inside paint method, this.color = rect.color = 'red'
 rect.paint(); // Output: Painting with color: red
+
 
 // ========== CREATING MULTIPLE OBJECTS ==========
 console.log("\n--- MULTIPLE RECTANGLES ---");
