@@ -3,7 +3,7 @@ int main() {
     // a = "hello";
     // a = "true";
 
-    // here we were trying to change it from int to char within same line of code
+    // here we were trying to change it from int to char within same line of the codes here
 }
 
 
