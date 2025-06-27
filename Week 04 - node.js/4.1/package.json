@@ -1,0 +1,13 @@
+{
+  "name": "4.1",
+  "version": "1.0.0",
+  "main": "01_index.js",
+  "scripts": {
+    "start": " node 01_index.js",
+    "start2": " node 02_indexChalk.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": ""
+}
