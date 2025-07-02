@@ -16,8 +16,8 @@ app.get(path, callback)
 - path: Defines the route for which the middleware function is triggered
 - callback: Function(s) that process the request made to the server
 
-req -> request -> what user is asking
-res -> response -> what to send back (data, headers, etc.)
+ // req -> all things related to the request -> if you want to extract something from the body
+// res -> want to send something back as the response
 */
 
 // Route handler for root path

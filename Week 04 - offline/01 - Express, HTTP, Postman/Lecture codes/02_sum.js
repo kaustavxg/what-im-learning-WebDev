@@ -1,6 +1,6 @@
 // ======== HTTP -> Hypertext Transfer Protocol ===========
 // How do I create an HTTP server? -> It is a protocol, can be written in any language
-// Answer -> Express
+// of the way to write it -> Express
 
 const express = require("express");
 
@@ -27,3 +27,5 @@ app.get("/", function(req, res) {
 // Step 2: Start the server (listening on port 3000)
 app.listen(3000);
 
+// how to run?
+//***  http://localhost:3000/n=30  ***
