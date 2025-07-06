@@ -11,7 +11,7 @@ const app = express();
 /*
 =========== EXPRESS ROUTING SYNTAX ===========
 
-app.get(path, callback)
+qpp.METHOD(PATH, HANDLER)
 
 - path: Defines the route for which the middleware function is triggered
 - callback: Function(s) that process the request made to the server
