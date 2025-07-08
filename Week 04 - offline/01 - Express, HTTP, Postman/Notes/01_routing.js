@@ -1,4 +1,4 @@
-// routing refers to determining how an application respons to a client request 
+// routing refers to determining how an application responds to a client request 
 // each route can have one or more handler functions, which are executed when the route is matched
 
 // ! SYNTAX
@@ -35,10 +35,10 @@ app.delete('/user', (req, res) => {
 })
 
 
-//TODO ==================================================================================================================================
+// # ====================================================================================================================================================
 
 
-// ! ================= ALL METHOD =================
+// ! =============================== ALL METHOD ==================================
 app.all('/hello', (req, res) => {
     res.send('Hello Kaustav, yeh sabki request methods ke liye chalega')
 })
