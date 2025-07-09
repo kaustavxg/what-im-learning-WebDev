@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fetch Request Example</title>
+</head>
+<body>
+    <button id="btn">Fetch my api</button>
+</body>
+<script>
+    const button = document.querySelector('#btn')
+    button.addEventListener('click', function(){
+        async function getRecentPost(){
+        
+            console.log("=========== before sending post ============");
+            
+            // STEP 1: Send request to API
+            const response = await fetch("https://jsonplaceholder.typicode.com/posts/1")
+            
+            // STEP 2: Convert response to JSON format
+            const data = await response.json();
+
+            /*
+            ## why two awaits?
+                1. const response = await fetch("https://jsonplaceholder.typicode.com/posts/1")
+                        => this waits for the http req to get comp
+                        => here you don't get the final data
+
+                2. const data = await response.json();
+                        => yaha ham body ke liye wait kr rhe hai ki vo raw data ko json mein parse kr rhi hai
+                        => here we are getting out full data in JSON
+
+            */
+            
+            console.log(data);
+            console.log("========== after sending post ===========");
+        }
+        getRecentPost();
+    })
+</script>
+</html>
+
+
+<!-- 
+
+ /*
+            ## Why .json()?
+            • API se jo data aata hai vo RAW format mein aata hai
+            
+            ### What is Raw Format?
+            ┌─────────────────────────────────────────────────────────────┐
+            │ When API sends data, it comes as a PLAIN STRING:            │
+            │                                                             │
+            │ Raw response body:                                          │
+            │ "{\"name\":\"Kaustav\",\"age\":20}"                         │
+            │                                                             │
+            │ This is NOT a JavaScript object! ❌                         │
+            │ You can't do: data.name (will give error)                   │
+            └─────────────────────────────────────────────────────────────┘
+            
+            ### What .json() does:
+            ┌─────────────────────────────────────────────────────────────┐
+            │ BEFORE .json():                                             │
+            │ "{\"name\":\"Kaustav\",\"age\":20}"  ← String format        │
+            │                                                             │
+            │ AFTER .json():                                              │
+            │ {                                    ← JavaScript object    │
+            │   name: "Kaustav",                                          │
+            │   age: 20                                                   │
+            │ }                                                           │
+            │                                                             │
+            │ Now you can access: data.name ✅                            │
+            └─────────────────────────────────────────────────────────────┘
+            
+            ### Alternative methods:
+            • .text() → Plain text string
+            • .blob() → Binary data (images, files)
+            • .arrayBuffer() → Raw binary data
+            
+            ## Why await on .json()?
+            • response.json() bhi async operation hai
+            • String ko JavaScript object mein convert karne mein time lagta hai
+            • Bina await ke undefined mil jayega
+            • Isliye await lagana zaroori hai
+            */
+
+-->
+
+<!-- ======================================================================  -->
+
+<!-- 
+
+/*
+    ## Why do we need AWAIT?
+    
+    Real-world analogy:
+    ┌─────────────────────────────────────────────────────────────┐
+    │ Without await:                                              │
+    │ • Tumne pizza order kiya                                    │
+    │ • Delivery boy ko wait nahi kiya                            │
+    │ • Khali plate pe khaane baith gaye 🍽️                       │
+    └─────────────────────────────────────────────────────────────┘
+    
+    ┌─────────────────────────────────────────────────────────────┐
+    │ With await:                                                 │
+    │ • Tumne pizza order kiya                                    │
+    │ • Delivery boy ka wait kiya                                 │
+    │ • Pizza aaya, phir khana start kiya 🍕                      │
+    └─────────────────────────────────────────────────────────────┘
+    
+    ## Technical reason:
+    • Network requests time lete hain (1-5 seconds)
+    • Bina await ke code aage chal jayega
+    • Data undefined mil jayega
+    • Await ensures: "Pehle data aa jaye, phir aage ka code chale"
+    */
+
+
+-->
+
+<!-- ======================================================================  -->
+
+<!-- 
+## FETCH vs GET - Key Differences
+
+┌─────────────────────────────────────────────────────────────────┐
+│ FETCH:                                                          │
+│ • JavaScript function/method                                    │
+│ • Used to send HTTP requests                                    │
+│ • Can send GET, POST, PUT, DELETE, etc.                         │
+│ • Default method: GET                                           │
+│ • Example: fetch(url, {method: 'POST'})                         │
+└─────────────────────────────────────────────────────────────────┘
+
+┌─────────────────────────────────────────────────────────────────┐
+│ GET:                                                            │
+│ • HTTP method/verb                                              │
+│ • Used to retrieve data from server                             │
+│ • Read-only operation                                           │
+│ • Data bhejne ke liye use nahi karte                            │
+│ • Example: GET /api/posts                                       │
+└─────────────────────────────────────────────────────────────────┘
+
+## What FETCH can do:
+• Send requests to backend/API
+• Include cookies, headers, body data
+• Handle different HTTP methods
+• Process responses (JSON, text, etc.)
+• Default behavior: GET request with no body
+
+## Simple formula:
+fetch() = Tool to send requests
+GET = Type of request (retrieve data)
+POST = Type of request (send data)
+PUT = Type of request (update data)
+DELETE = Type of request (remove data)
+-->

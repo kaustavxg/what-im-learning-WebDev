@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="post"></div>
+</body>
+
+<!-- CDN link gives access to global 'axios' variable -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.7.6/axios.min.js"></script>
+
+<script>
+/*
+## What is Axios?
+┌─────────────────────────────────────────────────────────────────┐
+│ Axios = External HTTP client library                            │
+│ • Makes API requests easier and cleaner                         │
+│ • Automatically handles JSON conversion                         │
+│ • Better error handling than fetch()                            │
+│ • More features out of the box                                  │
+└─────────────────────────────────────────────────────────────────┘
+*/
+
+async function getRecentPost(){
+    console.log("before sending request");
+    
+    // Single line mein API call + JSON conversion
+    const response = await axios.get("https://jsonplaceholder.typicode.com/posts/2")
+    
+    // Direct access to data - no .json() needed!
+    document.getElementById('post').innerHTML = response.data.title;
+
+    getRecentPost()
+
+}
+</script>
+
+<script>
+/*
+    ## Axios vs Fetch Comparison:
+    
+    ┌─────────────────────────────────────────────────────────────────┐
+    │ FETCH (Native JavaScript):                                     │
+    │ const response = await fetch("api-url")                        │
+    │ const data = await response.json()  ← Extra step needed        │
+    │ console.log(data.title)                                         │
+    └─────────────────────────────────────────────────────────────────┘
+    
+    ┌─────────────────────────────────────────────────────────────────┐
+    │ AXIOS (External Library):                                      │
+    │ const response = await axios.get("api-url")                    │
+    │ console.log(response.data.title)  ← Direct access!             │
+    └─────────────────────────────────────────────────────────────────┘
+    
+    ## Key Benefits of Axios:
+    • Automatic JSON parsing (response.data mein mil jata hai)
+    • Better error handling
+    • Request/response interceptors
+    • Automatic request body serialization
+    • Wide browser support
+    • Cleaner syntax
+    */
+
+
+    /*
+## Why Use Axios?
+
+### Syntactically Better:
+Instead of this messy fetch code:
+```javascript
+const response = await fetch("random.api/")
+const data = await response.json()
+// Extra steps, more code
+```
+
+You get this clean axios code:
+```javascript
+const response = await axios.get("random.api/")
+// response.data already contains parsed JSON!
+```
+
+### Real-world analogy:
+┌─────────────────────────────────────────────────────────────────┐
+│ FETCH = Manual cooking                                          │
+│ • Chop vegetables                                               │
+│ • Cook rice separately                                          │
+│ • Mix everything manually                                       │
+│ • More steps, more effort                                       │
+└─────────────────────────────────────────────────────────────────┘
+
+┌─────────────────────────────────────────────────────────────────┐
+│ AXIOS = Ready-made meal kit                                     │
+│ • Everything pre-processed                                      │
+│ • Just heat and serve                                           │
+│ • Less code, more features                                      │
+└─────────────────────────────────────────────────────────────────┘
+
+## Summary:
+Axios = HTTP client library that makes API calls cleaner and easier
+*/
+</script>
+</html>
