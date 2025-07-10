@@ -101,7 +101,7 @@ app.get('/divide', function(req, res){
 │ • More intuitive and readable                                   │
 └─────────────────────────────────────────────────────────────────┘
 
-## How Route Parameters Work:
+!=================== How Route Parameters Work ===================
 • Define: /add/:a/:b  (: indicates parameter)
 • Access: req.params.a, req.params.b
 • URL: localhost:3000/add/4/5
@@ -144,16 +144,16 @@ app.get('/add/:a/:b', (req, res) => {
 ===============================================
 
 ## Use Route Parameters (/api/user/123) when:
-✅ Data is required for the endpoint to work
-✅ Information is essential (like user ID, product ID)
-✅ You want cleaner, more readable URLs
-✅ Building RESTful APIs
+Data is required for the endpoint to work
+Information is essential (like user ID, product ID)
+You want cleaner, more readable URLs
+Building RESTful APIs
 
 ## Use Query Parameters (/api/users?page=1&limit=10) when:
-✅ Data is optional
-✅ For filtering, sorting, pagination
-✅ Multiple optional parameters
-✅ Search functionality
+Data is optional
+For filtering, sorting, pagination
+Multiple optional parameters
+Search functionality
 
 ## Real-world Examples:
 

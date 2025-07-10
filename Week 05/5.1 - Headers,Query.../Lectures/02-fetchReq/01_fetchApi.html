@@ -55,22 +55,22 @@
             │ Raw response body:                                          │
             │ "{\"name\":\"Kaustav\",\"age\":20}"                         │
             │                                                             │
-            │ This is NOT a JavaScript object! ❌                         │
+            │ This is NOT a JavaScript object!                            │
             │ You can't do: data.name (will give error)                   │
             └─────────────────────────────────────────────────────────────┘
             
             ### What .json() does:
             ┌─────────────────────────────────────────────────────────────┐
-            │ BEFORE .json():                                             │
+!           │ BEFORE .json():                                             │
             │ "{\"name\":\"Kaustav\",\"age\":20}"  ← String format        │
             │                                                             │
-            │ AFTER .json():                                              │
+!           │ AFTER: .json():                                             │
             │ {                                    ← JavaScript object    │
             │   name: "Kaustav",                                          │
             │   age: 20                                                   │
             │ }                                                           │
             │                                                             │
-            │ Now you can access: data.name ✅                            │
+            │ Now you can access: data.name                               │
             └─────────────────────────────────────────────────────────────┘
             
             ### Alternative methods:
@@ -99,21 +99,21 @@
     │ Without await:                                              │
     │ • Tumne pizza order kiya                                    │
     │ • Delivery boy ko wait nahi kiya                            │
-    │ • Khali plate pe khaane baith gaye 🍽️                       │
+    │ • Khali plate pe khaane baith gaye                          │
     └─────────────────────────────────────────────────────────────┘
     
     ┌─────────────────────────────────────────────────────────────┐
     │ With await:                                                 │
     │ • Tumne pizza order kiya                                    │
     │ • Delivery boy ka wait kiya                                 │
-    │ • Pizza aaya, phir khana start kiya 🍕                      │
+    │ • Pizza aaya, phir khana start kiya                         │
     └─────────────────────────────────────────────────────────────┘
     
     ## Technical reason:
     • Network requests time lete hain (1-5 seconds)
     • Bina await ke code aage chal jayega
     • Data undefined mil jayega
-    • Await ensures: "Pehle data aa jaye, phir aage ka code chale"
+    • Await kehta hai: "Pehle data aa jaye, phir aage ka code chale"
     */
 
 

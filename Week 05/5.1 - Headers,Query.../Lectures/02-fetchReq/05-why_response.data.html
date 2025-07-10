@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="btn"></div>
+</body>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.7.6/axios.min.js"></script>
+<script>
+    async function getData(){
+        const response = await axios.get("https://api.github.com/users/kaustavxg");
+        document.querySelector('#btn').innerHTML = response.data.avatar_url; 
+    }
+    getData()
+    /*
+        ## why response.data?? 
+        
+        axios.get() sirf data return nahi karta, ye pura object return karta hai:
+        
+        {
+          data: {...},           // yahan actual API response hai like {name, id, login, avatar_url, etc....}
+          status: 200,           // HTTP status code
+          statusText: "OK",      // status message
+          headers: {...},        // response headers
+          config: {...},         // request config
+          request: {...}         // request object
+        }
+        
+        toh response mein sirf data nahi hai, but iske andar `data` property mein actual API response hai
+        
+        jaise parcel mein gift hota hai na, waise hi response mein data hota hai
+        
+        GitHub API se jo actual response aata hai wo response.data mein hota hai:
+        {
+          "login": "kaustavxg",
+          "id": 12345,
+          "avatar_url": "https://avatars.githubusercontent.com/u/12345",
+          "name": "Kaustav",
+          "bio": "Developer"
+        }
+        
+        isliye response.data.avatar_url likhna padta hai
+        
+        fetch mein directly data mil jata hai but axios mein wrapper object milta hai
+        */
+
+    /*
+    response object mein ye sab properties hoti hain:
+    
+    data - actual API response (yahi chaiye hota hai)
+    status - HTTP status code (200, 404, etc.)
+    statusText - status message ("OK", "Not Found")
+    headers - response headers
+    config - request configuration
+    request - request object
+    
+    basically:
+    response.data = actual content
+    response.status = request success/fail
+    response.headers = extra info
+    
+    fetch vs axios:
+    fetch mein: const data = await response.json()
+    axios mein: const data = response.data
+    
+    axios extra wrapper deta hai debugging ke liye
+    */
+</script>
+</html>

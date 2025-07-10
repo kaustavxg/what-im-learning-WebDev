@@ -38,11 +38,19 @@ Breaking it down:
 ┌─────────────────────────────────────────────────────────────────┐
 │ Header Name          │ Purpose                                  │
 ├─────────────────────────────────────────────────────────────────┤
-│ Host                 │ Kaunsi website ka request hai           │
-│ Content-Type         │ Data ka format kya hai (JSON/HTML/etc)  │
-│ Authorization        │ User authenticated hai ya nahi          │
-│ User-Agent          │ Kaunsa browser/app use kar raha hai      │
+│ Host                 │ Kaunsi website ka request hai            │
+│ Content-Type         │ Data ka format kya hai (JSON/HTML/etc)   │
+│ Authorization        │ User authenticated hai ya nahi           │
+│ User-Agent           │ Kaunsa browser/app use kar raha hai      │
 └─────────────────────────────────────────────────────────────────┘
+
+
+## Request Headers
+the headers the client sends out in the request are known as request headers
+
+
+## Response Headers
+the headers that the server response to the client 
 
 ## Key Point:
 Headers mein actual webpage ya data nahi hota
