@@ -4,7 +4,6 @@
 
 - `Notes` from lectures
 - `Source code` from live coding sessions
-- `Assignment solutions`
 - An `organized list` of all topics covered during the course
 
 The content is structured to help you follow along with the curriculum and easily navigate through the material.
