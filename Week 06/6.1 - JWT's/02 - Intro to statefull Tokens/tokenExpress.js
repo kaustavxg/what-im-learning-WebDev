@@ -26,9 +26,10 @@ app.use(express.json());
 
 let users = [] // Yahan sab users store honge
 
-//! Token banane ka simple tarika - current time use karte hain
+// Token banane ka simple tarika - current time use karte hain
+
 function generateToken(){
-    return Date.now().toString();
+    return parseInt(Date.now().toString() + Math.random() * 10000);
 }
 
 //! =====================================================
