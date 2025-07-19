@@ -48,7 +48,7 @@ async function axiosGetExample() {
     try {
         // Single step - auto JSON conversion
         const response = await axios.get('https://jsonplaceholder.typicode.com/posts/1');
-        
+        3
         console.log("Axios Data:", response.data);
         return response.data;
     } catch (error) {

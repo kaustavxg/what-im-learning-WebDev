@@ -1,6 +1,4 @@
 const axios = require('axios');
-// app.use(express.json());
-
 
 axios.get('/results[0]')
     .then(function(response){
@@ -16,9 +14,8 @@ async function getAPI(){
         const response = await axios.get("https://randomuser.me/api/");
         console.log(response);
         
-    } catch{
-        console.log("chud gaye guru");
-        
+    } catch(err){
+        console.log(`ERROR: ${err}`);
     }
     
 }
