@@ -7,7 +7,7 @@ app.use(express.json());
 // function that returns a boolean if a person is more than age of 14
 
 
-// ================== MIDDLEWARE APPROACH ==================
+//! ================== MIDDLEWARE APPROACH ==================
 // Ye function check karta hai ki user 14+ hai ya nahi
 // Agar hai toh next() call karta hai, nahi toh error message send karta hai
 function isOldEnough(req, res, next){
@@ -38,9 +38,9 @@ app.get('/ride2', isOldEnough, function(req, res){
 
 app.listen(3000);
 
-// ================ GLOBAL MIDDLEWARE APPROACH =========
+//! ================ GLOBAL MIDDLEWARE APPROACH =========
 // Agar sabhi routes mein same middleware use karna hai toh ye method use karo
-// ```````` app.use(isOldEnough) ```````````;
+//# ```````` app.use(isOldEnough) ```````````;
 
 // Fir routes mein middleware function name nahi likhna padega
 /*
@@ -67,8 +67,8 @@ app.get('/ride3', function(req, res){
 */
 
 
-// ================ WITHOUT MIDDLEWARE APPROACH (AVOID THIS) =========
-// Ye dekho ki middleware use na karne se kitna repetitive code hota hai
+//! ================ WITHOUT MIDDLEWARE APPROACH (AVOID THIS) =========
+//# Ye dekho ki middleware use na karne se kitna repetitive code hota hai
 
 /*
 // --------- basically a ticket checker -------------
@@ -108,9 +108,12 @@ app.get('/ride2',function(req, res){
 */
 
 /* 
-=============== MIDDLEWARE KYA HOTA HAI? ===============
+!=============== MIDDLEWARE KYA HOTA HAI? ===============
 - Middleware ek function hai jo request aur response ke beech mein run hota hai
-- Ye request ko modify kar sakta hai, response bhej sakta hai, ya next middleware ko call kar sakta hai
+- Ye request ko 
+#    1. modify kar sakta hai, 
+#    2. response bhej sakta hai, 
+#    3. next middleware ko call kar sakta hai
 - next() function current middleware se next middleware/route handler pe control pass karta hai
 
 FAYDE:
