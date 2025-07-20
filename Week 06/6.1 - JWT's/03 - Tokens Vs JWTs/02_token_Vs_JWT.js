@@ -1,7 +1,7 @@
 /*
 ! ================= TOKENS VS JWTS ====================
 
-# STATEFUL TOKENS (Traditional way)
+! STATEFUL TOKENS (Traditional way)
 - Server generates random token (like timestamp)
 - Token stored in database with user info
 - Every request: server checks DB to verify token
@@ -12,7 +12,7 @@ Example flow:
 2. User makes request → Server queries DB → "Is this token valid?"
 3. DB response → Server allows/denies request
 
-# STATELESS AUTHENTICATION (JWT way)
+! STATELESS AUTHENTICATION (JWT way)
 - Server creates token WITH user info inside it
 - Token contains: username, permissions, expiry - sab kuch!
 - Server encrypts the token so no one can fake it

@@ -52,7 +52,7 @@ app.post('/signup', function(req, res){
 
 
 /*
-  ! SIGN-IN API
+  ! SIGN-IN API username,
   - username + password verify karta hai
   - agar user mil gaya toh JWT token generate karta hai
 */
