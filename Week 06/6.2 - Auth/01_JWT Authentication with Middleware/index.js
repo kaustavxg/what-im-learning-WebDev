@@ -73,9 +73,7 @@ app.post("/signin", logger, function (req, res) {
         const token = jwt.sign(
             {
                 username, // username: foundUser.username,
-            },
-            JWT_SECRET
-        );
+            }, JWT_SECRET);
 
         // Set the token in the response headers using the res.header() function and res.setHeader() function
         // res.header("authorization", token);

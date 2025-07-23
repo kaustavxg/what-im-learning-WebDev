@@ -66,6 +66,7 @@ app.post('/signin', function(req, res){
     });
 
     if(user){
+        
         //! JWT token generate kar rahe hain
         const token = jwt.sign({
             username: username   // payload: kya encode karna hai
