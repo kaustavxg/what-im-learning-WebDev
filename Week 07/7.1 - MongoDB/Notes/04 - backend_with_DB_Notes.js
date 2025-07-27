@@ -14,7 +14,7 @@ Topics Covered:
 
 const express = require('express');
 const mongoose = require('mongoose');
-const {UserModel, TodoModel} =  require("./database") // Database models import kar rahe hain
+const {UserModel, TodoModel} =  require("../Lecture/database") // Database models import kar rahe hain
 // TodoModel abhi directly use nahi ho raha, but baad mein userId ke through todos fetch karenge
 
 const jwt = require('jsonwebtoken');

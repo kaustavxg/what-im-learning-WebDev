@@ -89,22 +89,3 @@ app.get('/todos', auth, function(req, res){
 app.listen(3000, () => {
     console.log("listening on port 3000");
 })
-
-
-/*
-
-1. how can you hash the password and yet check if user exist in database or not
-
-2. what is bearer difference b/w authentication and authorisation
-
-
-3. what is referesh token, access token etc....
-
-4. what is OAuth
-
-5. difference between mongoose and MongoDB
-
-6. what is all inside mongoDB
-
-7. what are schemaless DB's - done
-*/
