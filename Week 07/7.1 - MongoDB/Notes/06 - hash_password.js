@@ -6,7 +6,9 @@ const password2 = "mohini@mangal"
 
 const saltRounds = 10;
 
-bcrypt.hash(plainPassword, saltRounds, function(err, hash){
+const merehaha = 10
+
+bcrypt.hash(plainPassword, merehaha, function(err, hash){
     if(err){
         console.log(`error hashing password: ${err}`);
     } else {
