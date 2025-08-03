@@ -18,4 +18,4 @@ Has at least one character between @ and .com
 
 */
 
-// check out ZOD library, ukaaa? ukaaa
+// check out ZOD library,

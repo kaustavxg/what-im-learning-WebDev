@@ -3,36 +3,14 @@ const jwt = require('jsonwebtoken');
 const bcrypt = require('bcrypt')
 const JWT_SECRET = "ilovemomo@100x"
 const mongoose = require('mongoose');
-const { z } = require('zod')
+const { UserModel, TodoModel } = require('./00_db');
 
-const { UserModel, TodoModel } = require('./db');
-
-mongoose.connect("mongodb+srv://kaustav23:1Y6cdcZ078aaK5bI@cluster0.vuiiw4w.mongodb.net/new-todo-zod")
+mongoose.connect("mongodb+srv://kaustav23:1Y6cdcZ078aaK5bI@cluster0.vuiiw4w.mongodb.net/new-todo-week7-2")
 
 const app = express();
 app.use(express.json());
 
 app.post('/signup', async function(req, res){
-
-    //# ZOD
-    const requiredBody = z.object({
-        email: z.string().min(3).max(100),
-        password: z.string().min(3).max(100),
-        name: z.string().min(3).max(100)
-    })
-
-    //# const parseData = requiredBody.parse(req.body);
-    // ============ OR ============
-    const parsedDataWithSuccess = requiredBody.safeParse(req.body);
-
-    if (!parsedDataWithSuccess.success) {
-        res.status(403).json({
-            error: "Incorrect format!",
-            issues: parsedDataWithSuccess.error.errors
-        });
-        return; // important to stop further execution
-    }
-
 
     const email = req.body.email;
     const password = req.body.password;
@@ -42,17 +20,22 @@ app.post('/signup', async function(req, res){
     // password -> string, 5 -> salt round
     console.log(`Hashed password: ${hashedPassword}`);
     
-    try {
+
+    try{
         await UserModel.create({
-            email: email,
-            password: hashedPassword,
-            name: name
+        email: email,
+        password: hashedPassword,
+        name: name
         })
+
         res.json({
-        message: "sign ed up successfully!!!"
-        }) 
-    } catch (error){
-        console.log(`Error in signing up: ${error}`); 
+            message: "signed up successfully!!!"
+        })
+
+    } catch(error){
+        res.status(404).json({
+            error: `Error in sign up: ${error}`
+        })
     }
 })
 
@@ -125,7 +108,7 @@ app.post('/todos', auth, function(req, res){
     })
 })
 
-app.listen(3030, () => {
-    console.log("listening on port 3030");
+app.listen(5000, () => {
+    console.log("listening on port 5000");
 })
 
