@@ -100,7 +100,6 @@ app.post('/signin', async function(req, res){
         ? toString() ka need kyu ?????
         - MongoDB ka _id ObjectId type ka hota hai, simple string nahi
         - JWT mein sirf string/number store kar sakte hain
-        - Real-world example: Government ID number ko photocopy ke liye plain text mein convert karna
         */
         console.log(user._id.toString());
         
@@ -194,12 +193,12 @@ app.listen(3000, () => {
    - 404: Not Found
    - 403: Forbidden (authentication failed)
 
-5.  Security Best Practices:
+# 5.  Security Best Practices:
    - JWT_SECRET environment variable mein rakhna
    - Password hashing karna (bcrypt use karke)
    - Input validation karna
 
-6. 📝 Next Steps:
+# 6. Next Steps:
    - TodoModel operations implement karna
    - Error handling improve karna
    - Input validation add karna
