@@ -1,12 +1,24 @@
 const mongoose = require('mongoose');
-mongoose.connect("mongodb+srv://kaustav23:1Y6cdcZ078aaK5bI@cluster0.vuiiw4w.mongodb.net/course-selling-app")
-const schema = mongoose.Schema
-const objectId = mongoose.objectId;
+mongoose.connect(process.env.MONGODB_URI);
+
+
+const schema = mongoose.Schema;
+const ObjectId = mongoose.ObjectId;
 
 const userSchema = new schema({
 
-    userId: objectId,
-    email: {type: String, unique: True},
+    // userId: objectId,
+    email: {type: String, unique: true},
+    password: String,
+    firstName: String,
+    lastName: String
+
+})
+
+const adminSchema = new schema({
+
+    // adminId: objectId,
+    email: {type: String, unique: true},
     password: String,
     firstName: String,
     lastName: String
@@ -15,37 +27,27 @@ const userSchema = new schema({
 
 const courseSchema = new schema({
 
-    courseId: objectId,
+    // courseId: objectId,
     title: String,
     description: String,
     price: Number,
     imageUrl: String,
-    creatorId: objectId
-
-})
-
-const adminSchema = new schema({
-
-    adminId: objectId,
-    email: {type: String, unique: True},
-    password: String,
-    firstName: String,
-    lastName: String
+    creatorId: ObjectId
 
 })
 
 const purchaseSchema = new schema({
 
-    purchaseId: objectId,
-    courseId: objectId,
-    userId: objectId
-
+    // purchaseId: objectId,
+    userId: ObjectId,
+    courseId: ObjectId
+    
 })
 
-const userModel = mongoose.Model("user", userSchema);
-const courseModel = mongoose.Model("course", courseSchema);
-const adminModel = mongoose.Model("admin", adminSchema);
-const purchaseModel = mongoose.Model("purchase", purchaseSchema);
+const userModel = mongoose.model("user", userSchema);
+const courseModel = mongoose.model("course", courseSchema);
+const adminModel = mongoose.model("admin", adminSchema);
+const purchaseModel = mongoose.model("purchase", purchaseSchema);
 
 module.exports = {
     userModel,
