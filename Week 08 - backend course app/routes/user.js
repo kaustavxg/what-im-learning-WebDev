@@ -1,9 +1,17 @@
-const {Router} = require('express');
-const userRouter = Router(); 
+// Third-party dependencies
+const { Router } = require('express');
 const { z } = require('zod');
 const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
-const { userModel } = require("../db")
+
+// Internal modules
+const { userModel, purchaseModel, courseModel } = require("../db");
+
+// middleware
+const { userMiddleware } = require('../middleware/user');
+
+// Initialize router
+const userRouter = Router();
 
 userRouter.post('/signup', async function(req, res){ 
 
@@ -84,10 +92,21 @@ userRouter.post('/signin', async function(req, res){
 })
 
 // view purchased course
-userRouter.get('/purchases', function(req, res){
-        res.json({
-            message:"viewing my purchase"
-        })
+userRouter.get('/purchases', userMiddleware ,async function(req, res){
+
+    const usedId = req.userId;
+    const purchases = await purchaseModel.find({
+        usedId
+    });
+
+    const coursesData = await courseModel.find({
+        //# what the heck is this?
+        _id: {$in: purchases.map(x => x.courseId)}
+    })    
+
+    res.json({
+        purchases
+    })
 })
 
 module.exports = {

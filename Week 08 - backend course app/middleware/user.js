@@ -1,5 +1,4 @@
 const jwt = require('jsonwebtoken');
-
 function userMiddleware(req, res, next){
 
     const token = req.headers.token;
@@ -13,7 +12,6 @@ function userMiddleware(req, res, next){
             message: "you are not signed in"
         })
     }
-
 }
 
 module.exports = {
