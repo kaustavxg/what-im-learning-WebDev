@@ -3,11 +3,11 @@ mongoose.connect(process.env.MONGODB_URI);
 
 
 const schema = mongoose.Schema;
-const ObjectId = mongoose.ObjectId;
+const ObjectId = mongoose.Schema.Types.ObjectId;
 
 const userSchema = new schema({
 
-    // userId: objectId,
+    // userId: objectId, -> no need because mongoose automatically creates a userid for every schema
     email: {type: String, unique: true},
     password: String,
     firstName: String,
@@ -17,7 +17,7 @@ const userSchema = new schema({
 
 const adminSchema = new schema({
 
-    // adminId: objectId,
+    // adminId: objectId, no need because mongoose automatically creates a userid for every schema
     email: {type: String, unique: true},
     password: String,
     firstName: String,
@@ -27,7 +27,7 @@ const adminSchema = new schema({
 
 const courseSchema = new schema({
 
-    // courseId: objectId,
+    // courseId: objectId, no need because mongoose automatically creates a userid for every schema
     title: String,
     description: String,
     price: Number,
@@ -38,7 +38,7 @@ const courseSchema = new schema({
 
 const purchaseSchema = new schema({
 
-    // purchaseId: objectId,
+    // purchaseId: objectId, no need because mongoose automatically creates a userid for every schema
     userId: ObjectId,
     courseId: ObjectId
     

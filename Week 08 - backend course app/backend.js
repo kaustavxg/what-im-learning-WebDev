@@ -18,8 +18,8 @@ async function main(){
     // using the mongo db string here is bad, that means isko bhi dot env mein feko
     await mongoose.connect(process.env.MONGODB_URI);
 
-    app.listen(process.env.PORT || 3000, () => {
-        console.log("listening on port 3000");
+    app.listen(process.env.PORT, () => {
+        console.log(`listening on port ${process.env.PORT}`);
     })    
 }
 
