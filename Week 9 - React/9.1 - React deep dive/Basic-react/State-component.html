@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Counter</title>
+</head>
+<body>
+    <div id="buttonParent"></div>
+</body>
+<script>
+    // global state object
+    let state = {
+        count: 0, // counter value
+        color: "white",
+        backgroundColor: "black"
+    }
+
+    // event handler for button clicks
+    function onButtonPress(){
+        state.count = state.count + 1; // increment counter
+        state.color = "red";
+        state.backgroundColor = "white"
+        buttonComponentReRender()
+    }
+
+    // component - renders HTML based on current state
+    function buttonComponentReRender(){
+        // clear previous content
+        document.getElementById('buttonParent').innerHTML = "";
+        
+        // create new button element
+        const button = document.createElement('button');
+        button.innerHTML = `Counter ${state.count}`; // set button text
+        button.setAttribute("onclick", 'onButtonPress()'); // attach click handler
+        button.setAttribute(
+            'style',
+            `color: ${state.color}; background-color: ${state.backgroundColor};`
+        );
+
+
+
+       document.getElementById('buttonParent').appendChild(button);
+
+    }
+
+    // initial render on page load
+    buttonComponentReRender();
+</script>
+</html>
