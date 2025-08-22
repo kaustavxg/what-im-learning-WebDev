@@ -1,5 +1,11 @@
 // Third-party dependencies
 const { Router } = require('express');
+// We are using JavaScript destructuring to get Router from Express
+// Express is a big library with many functions like express.json(), express.Router(), etc.
+// Normally, to create a router, we would write ``` express.Router() ``` every time
+//# By doing `const { Router } = require('express')`, we can now just call Router()
+// This makes the code cleaner and easier to read, especially when creating multiple route files
+
 const { z } = require('zod');
 const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
