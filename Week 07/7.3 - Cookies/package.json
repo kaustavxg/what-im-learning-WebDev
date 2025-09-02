@@ -1,0 +1,17 @@
+{
+  "name": "7.3---cookies",
+  "version": "1.0.0",
+  "main": "backend.js",
+  "scripts": {
+    "dev": "nodemon backend.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "cookie-parser": "^1.4.7",
+    "express": "^5.1.0",
+    "nodemon": "^3.1.10"
+  }
+}
