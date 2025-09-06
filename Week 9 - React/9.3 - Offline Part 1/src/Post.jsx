@@ -2,6 +2,8 @@ import clockPic from './assets/clock.jpg'
 
 const bgStyle = { width: 200, backgroundColor: "white", borderRadius: 10, borderColor: "white", borderWidth: 1, padding: 20}
 
+//! all these - name, subtitle, time, image, description are props
+// means we don't need to hardcode these things everytime we can just right the name of the person instead of defining the schema everytime
 export function PostComponent({name, subtitle, time, image, description}){
   return <div style={bgStyle}>
     <div style={{display: "flex"}}>
