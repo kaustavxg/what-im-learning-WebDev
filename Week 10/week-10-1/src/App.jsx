@@ -1,26 +1,36 @@
 import './App.css'
 import { BrowserRouter, Routes, Route, Link, useNavigate } from 'react-router-dom'
+import { Outlet } from 'react-router-dom'
 
 function App() {
 
   return <div>
     
     <BrowserRouter>
-    <Link to="/">Allen</Link> 
-      | 
-    <Link to="/neet/online-coaching-class-11">Class 11</Link> 
+      
+      <Routes>
+          <Route path="" element={<Layout/>} />
+            <Route path='/neet/online-coaching-class-11' element={<Class11Program/>}/> 
+            <Route path='/neet/online-coaching-class-12' element={<Class12Program/>}/> 
+            <Route path='/' element={<Landing/>}/>  
+            <Route path='*' element={<ErrorPage/>}/>
+      </Routes>
+        
+    </BrowserRouter>
+  </div>
+}
+
+function Layout(){
+  return <div style={{height: "100vh"}}>
+      <Link to="/">Allen</Link> 
+        | 
+      <Link to="/neet/online-coaching-class-11">Class 11</Link> 
       | 
       <Link to="neet/online-coaching-class-12">Class 12 </Link>
-      <Routes>
-          <Route path='/neet/online-coaching-class-11' element={<Class11Program/>}/> 
-          <Route path='/neet/online-coaching-class-12' element={<Class12Program/>}/> 
-          <Route path='/' element={<Landing/>}/>  
-          <Route path='*' element={<ErrorPage/>}></Route>
-      </Routes>
-      <Routes>
-        Footer | Contact Us
-      </Routes>
-    </BrowserRouter>
+      <div style={{height: "90vh"}}>
+      <Outlet/>
+    </div>
+    Footer | Contact Us
   </div>
 }
 
@@ -46,7 +56,7 @@ function Class12Program(){
 
   return <div>
     <h1>NEET Program for Class 12th</h1>
-    <button onClick={redirectUser}>Go back to the landing page</button>
+    <button onClick={redirectUser}>Go back to the landing page! how after 10 seconds???</button>
   </div>
 }
 
