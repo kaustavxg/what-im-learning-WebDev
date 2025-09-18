@@ -12,7 +12,7 @@ function App() {
           <Route path="" element={<Layout/>} />
             <Route path='/neet/online-coaching-class-11' element={<Class11Program/>}/> 
             <Route path='/neet/online-coaching-class-12' element={<Class12Program/>}/> 
-            <Route path='/' element={<Landing/>}/>  
+            <Route path='/allen' element={<Landing/>}/>  
             <Route path='*' element={<ErrorPage/>}/>
       </Routes>
         
@@ -22,7 +22,7 @@ function App() {
 
 function Layout(){
   return <div style={{height: "100vh"}}>
-      <Link to="/">Allen</Link> 
+      <Link to="/allen">Allen</Link> 
         | 
       <Link to="/neet/online-coaching-class-11">Class 11</Link> 
       | 
