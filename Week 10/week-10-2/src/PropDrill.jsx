@@ -5,29 +5,33 @@ import lampOff from './assets/lampOff.png';
 
 
 function PropDrill() {
-
-  return <div>
-    <LightBulb/>
-  </div>
+    const [bulbOn, setBulbOn] = useState(true);
+    
+    return <div>
+        <LightBulb bulbOn={bulbOn} setBulbOn={setBulbOn}/>
+    </div>
 }
 
-function LightBulb(){
-
-  const [bulbOn, setBulbOn] = useState(true);
+function LightBulb({bulbOn, setBulbOn}){
+    // bulbOn is a prop to the Bulb State component
+    // bulbOn, setBulbOn are props to the ToggleBulbState component
+  
+    //# yaha pe bulbOn and setBulbOn toh use hi nai ho rhe hai - upar se leke niche children mein de rhe hai ye 
 
   return <div>
 
-    {/* here we moved props from child to parent s */}
-    <BulbState bulbOn={bulbOn}/>
-    <ToggleBulbState setBulbOn={setBulbOn}/>
+    {/* here we moved props from child to parent's */}
+    {/* they are using the bulbOn and setBulbOn from above and passing down to the child  */}
+    <LightBulb bulbOn={bulbOn}/>
+    <LightSwitch setBulbOn={setBulbOn}/>
   </div>
 
 }
 
 // on off on off 
-function BulbState({bulbOn}){
+function LightBulb({bulbOn}){
 
-  return <div>
+  return <div>z
     <img 
         src={bulbOn ? lampOn : lampOff} 
         width="150"
@@ -35,7 +39,7 @@ function BulbState({bulbOn}){
   </div>
 }
 
-function ToggleBulbState({bulbOn, setBulbOn}){
+function LightSwitch({bulbOn, setBulbOn}){
 
   function toggle(){
     //! 1.  setBulbOn(currentState => !currentState)
