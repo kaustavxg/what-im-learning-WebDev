@@ -3,29 +3,31 @@ import './App.css'
 import { BrowserRouter, Routes, Route, Link, useNavigate } from 'react-router-dom'
 import { Outlet } from 'react-router-dom'
 
-function HookRef(){
+function HookRef() {
 
-    //! one of the way to write this function - not the right way -  you don't want through dom manipulation in react 
+    //! Avoid this approach: directly manipulating the DOM is not recommended in React
     // function focusOnInput(){
     //     document.getElementById('name').focus()
     // } 
 
-    //! better way is to use - references **** (useRef) ****
-    //# useRef - reference to a value, such that when you change the value, the component DOES NOT RE-RENDER
+    //! Recommended approach: use refs (useRef)
+    //# useRef allows you to keep a reference to a DOM element or value.
+    //# Changing the ref does NOT trigger a component re-render.
     const inputRef = useRef();
-    function focusOnInput(){
+
+    // Function to focus the input using the ref
+    function focusOnInput() {
         inputRef.current.focus();
     }
 
-
     return <div>
         <label>Sign up: </label>
-        <input ref={inputRef} type={"text"} placeholder='reference is here'></input>
-        <br></br>
+        <input ref={inputRef} type="text" placeholder='reference is here' />
+        <br />
         
         <label>Sign in: </label>
-        <input type={"text"} placeholder='I am here'></input>
-        <br></br>
+        <input type="text" placeholder='I am here' />
+        <br />
         <button onClick={focusOnInput}>Submit</button>
     </div>
 

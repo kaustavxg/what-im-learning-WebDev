@@ -1,42 +1,20 @@
-import { useEffect, useState } from 'react'
-import './App.css'
-import { useFetch } from './hooks/useFetch'
+import "./App.css";
+import { useDebounce } from "./hooks/useDebounce";
 
-
-//! useFetch Hook
+//! useDebounce Hook
 
 function App() {
-
-  const [currentPost, setCurrentPost] = useState(1);
-  const { finalData, loading, error } = useFetch(`https://jsonplaceholder.typicode.com/posts/${currentPost}, 10 `);
-
-  // react swr, tanstack query provide this benefits
-
-  if(loading){
-    console.log(`inside loading`);
-    
-    return <div>
-      <h1>Loading...</h1>
-    </div>
+  function sendDataToBackend(){
+    fetch("api.amazon.com/search/")
   }
 
+  const debounceFn = useDebounce(sendDataToBackend);
+
   return (
-    
     <div>
-      <br />
-      <button onClick={() => setCurrentPost(1)}>1</button>
-      <br />
-      <button onClick={() => setCurrentPost(2)}>2</button>
-      <br />
-      <button onClick={() => setCurrentPost(3)}>3</button>
-      <br />
-      <button onClick={() => setCurrentPost(4)}>4</button>
-      <br />
-
-      {JSON.stringify(finalData)}
+      <input type="text" onChange={debounceFn}/>
     </div>
-  )
-
+  );
 }
 
-export default App
+export default App;
