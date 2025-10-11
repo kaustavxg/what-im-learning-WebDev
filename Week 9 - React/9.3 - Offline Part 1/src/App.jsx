@@ -7,51 +7,126 @@ import { useEffect } from 'react'
 import { CardComponent } from './Card'
 import { useState } from 'react'
 
+
+
+//! components
+function App(){
+  return(
+    <div>
+      <div>
+        <PostComponent1 
+          name={"Kaustav  Gupta"}
+          followers={"1347"}
+          time={"13"}
+          image={kaustavPic}
+          desc={"My name is Lord Gupta"}
+        />
+        <br />
+        <br />
+      </div>
+
+      <div>
+        <PostComponent1 
+          name={"Mohini  Gupta"}
+          followers={Promoted}
+         
+          image={mohiniPic}
+          desc={"My name is Queen Momo"}
+        />
+        <br />
+        <br />
+      </div>
+    </div>
+    
+  )
+}
+
+const style = {
+  width: 200, 
+  bakgroundColor: "red",
+  borderColor: "grey",
+  borderWidth: 1,
+  display: "flex",
+
+}
+
+function PostComponent1({name, followers, time, image, desc}){
+
+  return (
+    <div style={style}>
+      <img src={image} style={{
+        width: 60,
+        height: 60,
+        borderRadius: 30,
+      }} alt="" />
+      <div>
+        <b>
+          {name}
+        </b>
+        <div>
+          {followers}
+        </div>
+
+        <div>
+          {time} ms
+        </div>
+        
+        <div>
+          {desc}
+        </div>
+      </div>
+    </div>
+  )
+}
+
+export default App
+
+
 //! -------------------------------------------------------------------------------
 
 //! playing with props
 
-export default function App(){
+// export default function App(){
 
-  const [cards, setCards] = useState([]);
+//   const [cards, setCards] = useState([]);
 
-  const cardComponent = cards.map(card => <CardComponent
+//   const cardComponent = cards.map(card => <CardComponent
   
-    name={`My name is ${card.name} `}
+//     name={`My name is ${card.name} `}
     
-    subtitle={`My cast is ${card.subtitle} `}
-    date={card.date}
-    venue={card.venue}
-    time={card.time}
+//     subtitle={`My cast is ${card.subtitle} `}
+//     date={card.date}
+//     venue={card.venue}
+//     time={card.time}
   
-  />)
+//   />)
 
-  function addCard(){
-    setCards([...cards, {
-      name: "Kaustav",
-      subtitle: "Gupta",
-      date: "13/11/25",
-      venue: "London",
-      time: "08:00 PM onwards"
-    },
-    {
-      name: "Aarav",
-      subtitle: "Sharma",
-      date: "20/11/25",
-      venue: "Delhi",
-      time: "06:00 PM onwards"
-    }
-    ])
-  }
+//   function addCard(){
+//     setCards([...cards, {
+//       name: "Kaustav",
+//       subtitle: "Gupta",
+//       date: "13/11/25",
+//       venue: "London",
+//       time: "08:00 PM onwards"
+//     },
+//     {
+//       name: "Aarav",
+//       subtitle: "Sharma",
+//       date: "20/11/25",
+//       venue: "Delhi",
+//       time: "06:00 PM onwards"
+//     }
+//     ])
+//   }
 
 
-  return <div>
+//   return <div>
     
-    <div>{cardComponent}</div>
-    <button onClick={addCard}>Add card</button>
+//     <div>{cardComponent}</div>
+//     <button onClick={addCard}>Add card</button>
 
-  </div>
-}
+//   </div>
+// }
 
 
 //! -------------------------------------------------------------------------------
