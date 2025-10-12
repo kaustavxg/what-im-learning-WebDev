@@ -21,7 +21,7 @@ export const Input = ({
             if(value && value.trim() !== "") 
                 onDone();
         }}
-      />
+       />
     </div>
   );
 };

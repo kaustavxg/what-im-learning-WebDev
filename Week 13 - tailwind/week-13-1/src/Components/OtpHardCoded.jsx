@@ -36,7 +36,7 @@ export const OtpHardCoded = () => {
             
 
             <div className="flex flex-col">
-                <Button disabled={disabled} className='text-black'>Sign Up</Button>
+                <Button disabled={disabled} className='text-black'>Verify</Button>
             </div>
             
         </div>
