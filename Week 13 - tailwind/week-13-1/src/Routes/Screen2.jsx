@@ -3,10 +3,16 @@ import { Heading } from '../Components/Heading'
 import { SecondHeading } from '../Components/SecondHeading'
 import { Input } from '../Components/Input'
 import { Button } from '../Components/Button';
+import { useNavigate } from 'react-router-dom';
 
 function Screen2() {
 
+  const naviagte = useNavigate();
   const [disabled, setDisabled] = useState(true);
+
+  function handleContinue(){
+    naviagte('/screen3')
+  }
 
   return (
     <div className='min-h-screen bg-[#111b5d]'>
@@ -31,7 +37,7 @@ function Screen2() {
             </div>
 
             <div className='flex justify-center mt-18'>
-                <Button disabled={disabled}>Continue</Button>
+                <Button disabled={disabled} onClick={handleContinue}>Continue</Button>
 
             </div>
 

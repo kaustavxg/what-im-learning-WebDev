@@ -1,13 +1,18 @@
 import React, { useState } from 'react'
-
 import {Button} from '../Components/Button'
 import {Input} from '../Components/Input'
 import {Heading} from '../Components/Heading'
 import {SecondHeading} from '../Components/SecondHeading'
+import { useNavigate } from 'react-router-dom'
 
 function Screen1() {
 
+  const navigate = useNavigate();
   const [disabled, setDisabled] = useState(true);
+
+  function handleContinue(){
+    navigate('/screen2');
+  }
 
   return (
     <div className='min-h-screen bg-[#111b5d]'>
@@ -35,21 +40,15 @@ function Screen1() {
         </div> 
 
         <div className='flex justify-center mt-18'>
-          <Button disabled={disabled}>Continue</Button>
+          <Button 
+            disabled={disabled}
+            onClick={handleContinue}
+          >
+            Continue
+          </Button>
         </div>
-
-
-
-        {/* <div className='mt-5 flex flex-col items-center'>
-          <OtpHardCoded/> 
-        </div> */}
-        
-       
-
         
       </div>
-     
-
     </div>
   )
 }

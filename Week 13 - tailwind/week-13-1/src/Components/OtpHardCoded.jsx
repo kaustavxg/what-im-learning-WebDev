@@ -14,24 +14,42 @@ export const OtpHardCoded = () => {
     return (
         <div className="flex flex-col items-center justify-center gap-6">
             <div className="flex justify-center">
-                <SubOtp reference={ref1} onDone={() => {
-                    ref2.current.focus();
-                }}/>
-                <SubOtp reference={ref2} onDone={() => {
-                    ref3.current.focus();
-                }}/>
-                <SubOtp reference={ref3} onDone={() => {
-                    ref4.current.focus();
-                }}/>
-                <SubOtp reference={ref4} onDone={() => {
-                    ref5.current.focus();
-                }}/>
-                <SubOtp reference={ref5} onDone={() => {
-                    ref6.current.focus();
-                }}/>
-                <SubOtp reference={ref6} onDone={() => {
-                    setDisabled(false);
-                }}/>
+                <SubOtp 
+                    reference={ref1} 
+                    onDone={() => {
+                        ref2.current.focus();
+                    }}
+                />
+                <SubOtp 
+                    reference={ref2} 
+                    onDone={() => {
+                        ref3.current.focus();
+                    }}
+                />
+                <SubOtp 
+                    reference={ref3} 
+                    onDone={() => {
+                        ref4.current.focus();
+                    }}
+                />
+                <SubOtp 
+                    reference={ref4} 
+                    onDone={() => {
+                        ref5.current.focus();
+                    }}
+                />
+                <SubOtp 
+                    reference={ref5} 
+                    onDone={() => {
+                        ref6.current.focus();
+                    }}
+                />
+                <SubOtp 
+                    reference={ref6} 
+                    onDone={() => {
+                        setDisabled(false);
+                    }}
+                />
             </div>
             
 
