@@ -4,3 +4,4 @@ Things to learn
 3. Absolute/fixed/relative positioning
 4. Completing the design
 5. Dark Mode, hover effects. (https://tailwindcss.com/docs/dark-mode#basic-usage)
+6. [Class Notes](https://www.canva.com/design/DAGVU1RXwn0/EBNpEgL7LxVUQd6ThorItA/edit)
