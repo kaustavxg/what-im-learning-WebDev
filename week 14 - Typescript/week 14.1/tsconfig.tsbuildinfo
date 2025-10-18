@@ -1,0 +1,1 @@
+{"root":["./index.d.ts","./src/01_basic.ts","./src/02_greetUser.ts","./src/03_sumOf2Numbers.ts","./src/04_checkAge.ts","./src/05_delayedFunction.ts","./src/06_arrowFunction.ts","./src/07_interfaces.ts","./src/08_Types.ts"],"version":"5.9.3"}
