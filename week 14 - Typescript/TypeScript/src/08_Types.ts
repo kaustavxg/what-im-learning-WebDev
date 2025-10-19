@@ -41,4 +41,4 @@ const teamLead: TeamLead = {
     department: "Software Developer"
 }
 
-
+console.log(teamLead);
