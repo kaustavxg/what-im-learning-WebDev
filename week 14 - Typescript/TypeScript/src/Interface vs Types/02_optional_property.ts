@@ -31,9 +31,8 @@ console.log(car1);
 console.log(car2);
 console.log(`=============================`);
 
-//==========================================
 //? What's happening?
-//==========================================
+
 /*
 The year property is optional (year?), so objects can skip it 
 without errors. Both interfaces and types handle optional 

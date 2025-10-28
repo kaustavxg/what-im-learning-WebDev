@@ -6,7 +6,7 @@
 let x: number | string = 1;
 
 //# Strict Type: Variable can only hold number
-let y: number = 1;
+let y: number | string = 1;
 
 // Reassigning x to a string (valid because of union type)
 x = "kaustav";
@@ -17,6 +17,8 @@ x = "kaustav";
 
 // Output the current value of x
 console.log(x); // Output: "kaustav"
+console.log(y);
+
 
 //==========================================
 //! How to Run TypeScript Code

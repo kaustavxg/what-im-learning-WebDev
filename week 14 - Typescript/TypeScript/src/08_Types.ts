@@ -1,4 +1,3 @@
-
 //! ======= UNION =======
 type SumInput = string | number;
 

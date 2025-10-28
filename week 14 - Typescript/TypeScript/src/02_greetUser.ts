@@ -1,5 +1,5 @@
 //==========================================
-// !TypeScript Functions with Type Annotations
+//! TypeScript Functions with Type Annotations
 //==========================================
 
 // Function with typed parameter and implicit return type
@@ -28,18 +28,18 @@ greet("ABC"); // Output: Hi, Good Morning ABC
 //! any type of value, making your code as unsafe as plain JavaScript
 
 //==========================================
-// Union Types: Multiple Allowed Types
+//# Union Types: Multiple Allowed Types
 //==========================================
 
 // Union type: Variable can be string OR number OR boolean
-let x: string | number | boolean = 1;
+let x: string | number | boolean | [number, string, number] = 1;
 
 // All these reassignments are valid due to union type
 x = true;       // Boolean is allowed
 x = "kaustav"; //  String is allowed
-// x = [1, 2, 3]; // ❌ Error: Array is NOT in the union type
+x = [1, "2", 3]; // array is allowed
 
-console.log(x); // Output: "harkirat"
+console.log(x); // Output: "[1, '2', 3]"
 
 //==========================================
 // Best Practices
@@ -48,4 +48,3 @@ console.log(x); // Output: "harkirat"
 //  Use union types when a variable needs flexibility
 //  Avoid 'any' type - it removes TypeScript's benefits
 //  Let TypeScript infer return types when obvious
-//==========================================

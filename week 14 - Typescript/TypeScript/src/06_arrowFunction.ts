@@ -19,6 +19,14 @@ Breaking it down:
 └─ { } → function body
 */
 
+let Kaustav = (name: string, age: number, marks: number): number => {
+    console.log(`Hi my name is ${name}, my age is ${age} and my marks are ${marks}`);
+
+    return 0;
+}
+console.log(Kaustav("Kaustav", 21, 85));
+
+
 // Arrow function stored in a variable
 //# TypeScript infers the return type as 'void' (returns nothing)
 let greet = (name: string) => {
@@ -37,13 +45,20 @@ let greetExplicit = (name: string): void => {
     console.log(`Hi there ${name}`);
 }
 
+console.log(greetExplicit("alex"));
+
+
 // Single-line arrow function (implicit return)
 let greetShort = (name: string) => console.log(`Hi there ${name}`);
+console.log(greetShort("kirat"));
+
 
 // Arrow function that returns a value
 let greetWithReturn = (name: string): string => {
     return `Hi there ${name}`;
 }
+console.log(greetWithReturn);
+
 
 // Even shorter - implicit return with parentheses removed
 let getMessage = (name: string) => `Hi there ${name}`;

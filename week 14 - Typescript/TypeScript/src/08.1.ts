@@ -50,3 +50,36 @@ let userss: User = {
         houseNumber: ""
     }
 }
+
+interface People {
+    name: string,
+    age: number,
+    greet: () => string, // or greet(): string
+}
+
+// create an obj called person of people type
+// greet should just greet the function
+
+// let person: People = {
+//     name: "kaustav",
+//     age: 20,
+//     // greet: () => {
+//     //     return "hi"
+//     // }
+// }
+
+// let greeting = person.greet()
+// console.log(greeting);
+
+// creating a class that implements this interface
+
+// classes in java script 
+class Manager implements People {
+    name: string;
+    age: number;
+
+    constructor(name: string, age: number) {
+        this.name = name;
+        this.age = age;
+    }
+}

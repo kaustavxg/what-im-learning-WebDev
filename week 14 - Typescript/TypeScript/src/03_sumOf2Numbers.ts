@@ -8,6 +8,9 @@ function sumFunc(a: number, b: number, c: string): string {
     return a + b + c; // Returns "33" (number addition then string concatenation)
 }
 
+let solution = sumFunc(4, 2, '3');
+console.log(solution);
+
 //==========================================
 // Understanding Return Type Annotations
 //==========================================

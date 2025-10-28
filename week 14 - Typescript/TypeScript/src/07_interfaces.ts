@@ -11,7 +11,7 @@ function greet(user1: {
     console.log(`Hello ${user1.firstName}`);
 }
 
-// Variable with the same object type defined inline again
+//# Variable with the same object type defined inline again
 let user1: {
     firstName: string,
     secondName: string,
@@ -55,7 +55,7 @@ let userType = {           // ❌ This won't work
 }
 
 function greet(user: userType) {  // ❌ Error!
-    // Error: 'userType' refers to a value, but is being used as a type here
+    //# Error: 'userType' refers to a value, but is being used as a type here
 }
 
 Why doesn't this work?
@@ -66,11 +66,32 @@ Why doesn't this work?
 */
 
 //==========================================
-// Solution: INTERFACES
+//! Solution: INTERFACES
 //==========================================
 
-// Interface: A reusable type definition for objects
+//# Interface: A reusable type definition for objects
 // Lives in the TYPE world, not the VALUE world
+
+
+interface UserCanDo{
+    firstName: string,
+    lastName: string,
+    age: number
+}
+
+let usersss: UserCanDo = {
+    firstName: "Kaustav",
+    lastName: "Gupta",
+    age: 2000
+}
+
+function thisIs(user: UserCanDo) {
+    console.log(`firstname is: ${user.firstName}, lastName: ${user.lastName} and your age is: ${user.age}`);
+}
+
+thisIs(usersss);
+
+
 interface UserType {
     firstName: string,
     lastName: string,
