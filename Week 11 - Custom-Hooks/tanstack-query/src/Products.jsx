@@ -2,15 +2,46 @@ import { useEffect, useState } from "react"
 
 function Products() {
   const [products, setProducts] = useState([]);
+  const [isLoading, setIsLoading] = useState(false);
+  const [error, setError] = useState(null);
 
   useEffect(() => {
     const fetchProducts = async () => {
-        const response = await fetch("https://dummyjson.com/products");
-        const data = await response.json();
-        setProducts(data.products);
+
+        
+        try{
+            // when data is sent to backend
+            setIsLoading(true);
+
+            setError(null)
+            const response = await fetch("https://dummyjson.com/products");
+       
+            const data = await response.json();
+            console.log(data.products)
+            setProducts(data.products);
+
+            // when data has been fetched
+            setIsLoading(false)
+        } catch (err){
+            setError(err.message);
+            setIsLoading(false)
+        }
+        
     };
     fetchProducts();
   }, [])
+
+    if(isLoading){
+        return <div>
+            Loading...
+        </div>
+    }
+
+    if(error){
+        return <div>
+            Error: {error}
+        </div>
+    }
   
     return (
         <div className="bg-white">
