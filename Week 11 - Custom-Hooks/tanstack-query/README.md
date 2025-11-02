@@ -1,16 +1,27 @@
-# React + Vite
+# 🧠 Learning TanStack Query
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+In this project, we explored how **TanStack Query** is much **better and faster** than the normal data fetching method using `fetch()` in React.
 
-Currently, two official plugins are available:
+## 🚀 What We Built
+We fetched product data from the **[DummyJSON API](https://dummyjson.com/products)** and created a small **[product listing website](https://tanstack-query-sand.vercel.app/)** to understand how data fetching works.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🆚 Comparison
+We compared two approaches:
+1. **Normal Fetching (using `useEffect` and `useState`)**
+2. **Fetching with TanStack Query (`useQuery`)**
 
-## React Compiler
+This helped us understand how TanStack Query simplifies data fetching, caching, and updating.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## ⚙️ Key Concepts Learned
+- **Caching:** How TanStack Query caches fetched data automatically for better performance.  
+- **staleTime:** The duration for which cached data is considered *fresh* before being refetched.  
+- **useParams:** Used to dynamically fetch data based on route parameters.  
+- **Automatic Refetching:** TanStack Query intelligently refetches stale data when needed.  
 
-## Expanding the ESLint configuration
+## 💡 Takeaway
+TanStack Query provides:
+- Faster performance through smart caching  
+- Cleaner and more maintainable code  
+- Built-in state management for API calls  
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+Overall, it makes React applications **more efficient and developer-friendly**.
